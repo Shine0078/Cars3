@@ -1,0 +1,20 @@
+{
+  "name": "cars3",
+  "version": "1.0.0",
+  "main": "postcss.config.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Shine0078/Cars3.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Shine0078/Cars3/issues"
+  },
+  "homepage": "https://github.com/Shine0078/Cars3#readme",
+  "description": ""
+}
