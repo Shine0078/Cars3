@@ -27,20 +27,30 @@ function Header(props) {
   };
 
   const drawer = (
-    <Box onClick={handleDrawerToggle} sx={{ textAlign: 'center' }}>
+    <Box
+      onClick={handleDrawerToggle}
+      sx={{
+        textAlign: 'center',
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        justifyContent: 'center',
+        minHeight: '100vh', // Ensures the drawer takes full height
+      }}
+    >
       <Typography variant="h6" sx={{ my: 2 }}>
-        
+        {/* Add a title or other content here */}
       </Typography>
       <Divider />
-      <List>
+      <List sx={{ width: '100%' }}>
         {navItems.map((item) => (
-        <a href={`/${item}`}>
-          <ListItem key={item} disablePadding>
-            <ListItemButton sx={{ textAlign: 'center' }}>
-              <ListItemText primary={item} />
-            </ListItemButton>
-          </ListItem>
-        </a>
+          <a href={`/${item}`} key={item} style={{ textDecoration: 'none' }}>
+            <ListItem disablePadding>
+              <ListItemButton sx={{ textAlign: 'center', width: '100%' }}>
+                <ListItemText primary={item} />
+              </ListItemButton>
+            </ListItem>
+          </a>
         ))}
       </List>
     </Box>
@@ -69,7 +79,7 @@ function Header(props) {
           >
             MUI
           </Typography>
-          <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
+          <Box sx={{ display: { xs: 'none', sm: 'flex' }, justifyContent: 'center', flexGrow: 1 }}>
             {navItems.map((item) => (
               <Button key={item} sx={{ color: '#fff' }}>
                 {item}
@@ -85,7 +95,7 @@ function Header(props) {
           open={mobileOpen}
           onClose={handleDrawerToggle}
           ModalProps={{
-            keepMounted: true, // Better open performance on mobile.
+            keepMounted: true, // Better open performance on mobile
           }}
           sx={{
             display: { xs: 'block', sm: 'none' },
@@ -98,31 +108,11 @@ function Header(props) {
       <Box component="main" sx={{ p: 3 }}>
         <Toolbar />
         <Typography>
-         
-        
+          {/* Main content goes here */}
         </Typography>
       </Box>
     </Box>
   );
 }
 
-Header.propTypes = {
-  /**
-   * Injected by the documentation to work in an iframe.
-   * You won't need it on your project.
-   */
-  window: PropTypes.func,
-};
-
 export default Header;
-
-
-
-// export default function Header() {
-//     return (
-//         <>
-//         <h1>This is my header</h1>
-//         </>
-//     )
-// }
-

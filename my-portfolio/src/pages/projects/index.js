@@ -1,53 +1,66 @@
-import { useState } from 'react'
+import { useState } from 'react';
 
 export default function Projects() {
+  // State for holding project information
+  const [project, setProject] = useState({
+    name: "Portfolio Project",
+    language: "Next.js",
+    description: "A personal portfolio website to showcase projects, skills, and achievements.",
+    tools: "React, Next.js, Tailwind CSS, Vercel",
+    githubLink: "https://github.com/username/portfolio",
+    liveLink: "https://portfolio.example.com",
+    image: "https://via.placeholder.com/600x400"  // Placeholder image link
+  });
 
-    let [project, setProject] = useState({
-        name: "portfolio project",
-        language: "nextjs"
-    })
+  return (
+    <div className="container mx-auto p-6">
+      {/* Project Header */}
+      <section className="text-center mb-12">
+        <h1 className="text-4xl font-bold text-blue-600">{project.name}</h1>
+        <h2 className="text-2xl mt-4 text-gray-700">Built with {project.language}</h2>
+      </section>
 
-    return (
-        <div className="bg-gray-100 p-8 rounded-lg shadow-md max-w-4xl mx-auto">
-        <h1 className="text-4xl font-semibold text-center text-blue-600">{name}</h1>
-  
-        <div className="mt-4">
-          <img
-            src={image}
-            alt={name}
-            className="w-full h-auto rounded-lg shadow-lg mb-4"
-          />
-          <p className="text-xl text-gray-700">{description}</p>
-        </div>
-  
-        <div className="mt-6">
-          <h2 className="text-2xl font-semibold text-gray-800">Technologies Used:</h2>
-          <ul className="list-disc pl-5 text-gray-700">
-            <li>{language}</li>
-            <li>{tools}</li>
-          </ul>
-        </div>
-  
-        <div className="mt-6 flex justify-center gap-4">
+      {/* Project Description */}
+      <section className="text-center mb-12">
+        <p className="text-lg text-gray-800 mt-4 max-w-3xl mx-auto">{project.description}</p>
+      </section>
+
+      {/* Project Image */}
+      <section className="text-center mb-12">
+        <img
+          src={project.image}
+          alt={project.name}
+          className="w-full max-w-4xl mx-auto rounded-lg shadow-md"
+        />
+      </section>
+
+      {/* Tools Used */}
+      <section className="text-center mb-12">
+        <h3 className="text-2xl font-semibold text-blue-500">Tools Used</h3>
+        <p className="text-lg text-gray-800 mt-4">{project.tools}</p>
+      </section>
+
+      {/* Links */}
+      <section className="text-center mb-12">
+        <div className="flex justify-center gap-6">
           <a
-            href={githubLink}
+            href={project.githubLink}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-white bg-gray-800 px-6 py-2 rounded-full hover:bg-gray-700 transition-colors"
+            className="text-white bg-blue-600 px-6 py-2 rounded-lg shadow-md"
           >
             View on GitHub
           </a>
           <a
-            href={liveLink}
+            href={project.liveLink}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-white bg-blue-600 px-6 py-2 rounded-full hover:bg-blue-500 transition-colors"
+            className="text-white bg-green-600 px-6 py-2 rounded-lg shadow-md"
           >
-            Live Demo
+            View Live
           </a>
         </div>
-      </div>
-    )
-
-
+      </section>
+    </div>
+  );
 }
