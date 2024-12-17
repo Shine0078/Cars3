@@ -4,4 +4,4 @@ functions = "netlify/functions"
 
 [[edge_functions]]
 function = "hello"
-path = "/tes"
+path = "/test"

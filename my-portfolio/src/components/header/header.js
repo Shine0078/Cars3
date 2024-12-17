@@ -77,7 +77,7 @@ function Header(props) {
             component="div"
             sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' } }}
           >
-            MUI
+            Welocome to My Portfolio Website
           </Typography>
           <Box sx={{ display: { xs: 'none', sm: 'flex' }, justifyContent: 'center', flexGrow: 1 }}>
             {navItems.map((item) => (
